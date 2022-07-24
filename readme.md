@@ -1,6 +1,12 @@
-# # Visual Working Memory task
+# Visual Working Memory task
+
+Visual working memory (VWM) lets us actively maintain a visual representation in the service of immediate task execution, and the detection of visual change is an efficient and reliable method for testing this cognitive ability. Interestingly, VWM is highly predictive of general cognitive ability and fluid intelligence.
+
+**In this repository:** A visual working memory task created using PsychoPy. This implementation is similar to that reported by Wilken & Ma (2004), Luck & Vogel (1997) (see also Luck & Vogel, 2013).
 
 Total runtime: 11.2 mins
+
+**To come:** Analysis scripts.
 
 ## Summary
 
