@@ -52,4 +52,5 @@ These are mapped into the excel file.
 <a id="1">[1]</a> Luck, S. J. & Vogel, E. K. Visual working memory capacity: from psychophysics and neurobiology to individual differences. Trends Cogn. Sci. 17, 391–400 (2013).
 
 <a id="2">[2]</a> Wilken, P. & Ma, W. J. A detection theory account of change detection. J. Vis. 4, 1120–1135 (2004).
+
 <a id="3">[3]</a> Luck, S. J. & Vogel, E. K. The capacity of visual working memory for features and conjunctions. Nature 390, 279–281 (1997).
