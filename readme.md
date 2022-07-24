@@ -1,8 +1,8 @@
 # Visual Working Memory task
 
-Visual working memory (VWM) lets us actively maintain a visual representation in the service of immediate task execution, and the detection of visual change is an efficient and reliable method for testing this cognitive ability. Interestingly, VWM is highly predictive of general cognitive ability and fluid intelligence.
+Visual working memory (VWM) lets us actively maintain a visual representation in the service of immediate task execution, and the detection of visual change is an efficient and reliable method for testing this cognitive ability. Interestingly, VWM is highly predictive of general cognitive ability and fluid intelligence [[1]](#1).
 
-**In this repository:** A visual working memory task created using PsychoPy. This implementation is similar to that reported by Wilken & Ma (2004), Luck & Vogel (1997) (see also Luck & Vogel, 2013).
+**In this repository:** A visual working memory task created using [PsychoPy](https://www.psychopy.org/). This implementation is in line with that reported in the literature (see [[1]](#1),[[2]](#2),[[3]](#3)).
 
 Total runtime: 11.2 mins
 
@@ -46,3 +46,10 @@ The (standardised) colours used are as follows:
 - X = [-1,-1,-1]
 
 These are mapped into the excel file. 
+
+## References
+
+<a id="1">[1]</a> Luck, S. J. & Vogel, E. K. Visual working memory capacity: from psychophysics and neurobiology to individual differences. Trends Cogn. Sci. 17, 391–400 (2013).
+
+<a id="2">[2]</a> Wilken, P. & Ma, W. J. A detection theory account of change detection. J. Vis. 4, 1120–1135 (2004).
+<a id="3">[3]</a> Luck, S. J. & Vogel, E. K. The capacity of visual working memory for features and conjunctions. Nature 390, 279–281 (1997).
