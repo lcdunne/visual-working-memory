@@ -3,7 +3,7 @@
   <Settings>
     <Param name="Audio latency priority" updates="None" val="use prefs" valType="str"/>
     <Param name="Audio lib" updates="None" val="use prefs" valType="str"/>
-    <Param name="Completed URL" updates="None" val="https://app.prolific.co/submissions/complete?cc=8697B8A4" valType="str"/>
+    <Param name="Completed URL" updates="None" val="" valType="str"/>
     <Param name="Data file delimiter" updates="None" val="auto" valType="str"/>
     <Param name="Data filename" updates="None" val="u'data/%s_%s_%s' % (expInfo['participant'], expName, expInfo['date'])" valType="code"/>
     <Param name="Enable Escape" updates="None" val="True" valType="bool"/>
@@ -20,7 +20,7 @@
     <Param name="Save log file" updates="None" val="True" valType="bool"/>
     <Param name="Save psydat file" updates="None" val="True" valType="bool"/>
     <Param name="Save wide csv file" updates="None" val="True" valType="bool"/>
-    <Param name="Screen" updates="None" val="1" valType="num"/>
+    <Param name="Screen" updates="None" val="2" valType="num"/>
     <Param name="Show info dlg" updates="None" val="True" valType="bool"/>
     <Param name="Show mouse" updates="None" val="False" valType="bool"/>
     <Param name="Units" updates="None" val="height" valType="str"/>
@@ -92,7 +92,7 @@
         <Param name="name" updates="None" val="wm_loc1_study" valType="code"/>
         <Param name="opacity" updates="constant" val="1" valType="code"/>
         <Param name="ori" updates="constant" val="0" valType="code"/>
-        <Param name="pos" updates="set every repeat" val="$(rad*cos(0), rad*sin(0))" valType="code"/>
+        <Param name="pos" updates="set every repeat" val="$(rad_*cos(0), rad_*sin(0))" valType="code"/>
         <Param name="saveStartStop" updates="None" val="False" valType="bool"/>
         <Param name="shape" updates="constant" val="rectangle" valType="str"/>
         <Param name="size" updates="set every repeat" val="$box_size" valType="code"/>
@@ -119,7 +119,7 @@
         <Param name="name" updates="None" val="wm_loc2_study" valType="code"/>
         <Param name="opacity" updates="constant" val="1" valType="code"/>
         <Param name="ori" updates="constant" val="0" valType="code"/>
-        <Param name="pos" updates="set every repeat" val="$(rad*cos(45), -rad*sin(45))" valType="code"/>
+        <Param name="pos" updates="set every repeat" val="$(rad_*cos(45), -rad_*sin(45))" valType="code"/>
         <Param name="saveStartStop" updates="None" val="False" valType="bool"/>
         <Param name="shape" updates="constant" val="rectangle" valType="str"/>
         <Param name="size" updates="set every repeat" val="$box_size" valType="code"/>
@@ -146,7 +146,7 @@
         <Param name="name" updates="None" val="wm_loc3_study" valType="code"/>
         <Param name="opacity" updates="constant" val="1" valType="code"/>
         <Param name="ori" updates="constant" val="0" valType="code"/>
-        <Param name="pos" updates="set every repeat" val="$(-rad*cos(45), -rad*sin(45))" valType="code"/>
+        <Param name="pos" updates="set every repeat" val="$(-rad_*cos(45), -rad_*sin(45))" valType="code"/>
         <Param name="saveStartStop" updates="None" val="False" valType="bool"/>
         <Param name="shape" updates="constant" val="rectangle" valType="str"/>
         <Param name="size" updates="set every repeat" val="$box_size" valType="code"/>
@@ -173,7 +173,7 @@
         <Param name="name" updates="None" val="wm_loc4_study" valType="code"/>
         <Param name="opacity" updates="constant" val="1" valType="code"/>
         <Param name="ori" updates="constant" val="0" valType="code"/>
-        <Param name="pos" updates="set every repeat" val="$(-rad*cos(0), rad*sin(0))" valType="code"/>
+        <Param name="pos" updates="set every repeat" val="$(-rad_*cos(0), rad_*sin(0))" valType="code"/>
         <Param name="saveStartStop" updates="None" val="False" valType="bool"/>
         <Param name="shape" updates="constant" val="rectangle" valType="str"/>
         <Param name="size" updates="set every repeat" val="$box_size" valType="code"/>
@@ -200,7 +200,7 @@
         <Param name="name" updates="None" val="wm_loc5_study" valType="code"/>
         <Param name="opacity" updates="constant" val="1" valType="code"/>
         <Param name="ori" updates="constant" val="0" valType="code"/>
-        <Param name="pos" updates="set every repeat" val="$(-rad*cos(45), rad*sin(45))" valType="code"/>
+        <Param name="pos" updates="set every repeat" val="$(-rad_*cos(45), rad_*sin(45))" valType="code"/>
         <Param name="saveStartStop" updates="None" val="False" valType="bool"/>
         <Param name="shape" updates="constant" val="rectangle" valType="str"/>
         <Param name="size" updates="set every repeat" val="$box_size" valType="code"/>
@@ -227,7 +227,7 @@
         <Param name="name" updates="None" val="wm_loc6_study" valType="code"/>
         <Param name="opacity" updates="constant" val="1" valType="code"/>
         <Param name="ori" updates="constant" val="0" valType="code"/>
-        <Param name="pos" updates="set every repeat" val="$(rad*cos(45), rad*sin(45))" valType="code"/>
+        <Param name="pos" updates="set every repeat" val="$(rad_*cos(45), rad_*sin(45))" valType="code"/>
         <Param name="saveStartStop" updates="None" val="False" valType="bool"/>
         <Param name="shape" updates="constant" val="rectangle" valType="str"/>
         <Param name="size" updates="set every repeat" val="$box_size" valType="code"/>
@@ -682,8 +682,8 @@
       <CodeComponent name="setup_code_2">
         <Param name="Before Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="Before JS Experiment" updates="constant" val="" valType="extendedCode"/>
-        <Param name="Begin Experiment" updates="constant" val="# To select version run files&amp;#10;exp_version = str(expInfo['version'])&amp;#10;&amp;#10;# AVOIDING NUMPY&amp;#10;bgcol = [-1,-1,-1]&amp;#10;basecol = [1,1,1]&amp;#10;distcol = basecol&amp;#10;salientcol = [1,1,1]&amp;#10;&amp;#10;CLRS = {&amp;#10;    'X': bgcol,&amp;#10;    'RED': [1, -0.733333333333333, -0.756862745098039],&amp;#10;    'BLUE': [-0.843137254901961, -0.929411764705882, 0.568627450980392],&amp;#10;    'GREEN': [-1, 0.96078431372549, -0.976470588235294],&amp;#10;    'CYAN': [-0.843137254901961, 0.984313725490196, 1],&amp;#10;    'YELLOW': [0.984313725490196, 0.992156862745098, -0.835294117647059],&amp;#10;    'PURPLE': [1, -0.67843137254902, 1],&amp;#10;    'GREY': [-0.23921568627451, -0.411764705882353, -0.349019607843137],&amp;#10;    'BLACK': [-0.67843137254902, -0.584313725490196, -0.56078431372549],&amp;#10;}&amp;#10;&amp;#10;# Apparently I need to change code in order to update the experiment to store on/off times&amp;#10;&amp;#10;distcol = basecol # default&amp;#10;&amp;#10;good_feedback_col = '#a6d854'&amp;#10;slow_feedback_col = '#feb24c'&amp;#10;&amp;#10;enc_rest_msg = &quot;&quot; # initialise to empty str&amp;#10;wm_rest_msg = &quot;&quot;&amp;#10;ret_rest_msg = &quot;&quot;&amp;#10;&amp;#10;&amp;#10;feedback_msg = &quot;&quot;&amp;#10;feedback_col = basecol" valType="extendedCode"/>
-        <Param name="Begin JS Experiment" updates="constant" val="exp_version = expInfo[&quot;version&quot;].toString();&amp;#10;bgcol = [(- 1), (- 1), (- 1)];&amp;#10;basecol = [1, 1, 1];&amp;#10;distcol = basecol;&amp;#10;salientcol = [1, 1, 1];&amp;#10;CLRS = {&quot;X&quot;: bgcol, &quot;RED&quot;: [1, (- 0.733333333333333), (- 0.756862745098039)], &quot;BLUE&quot;: [(- 0.843137254901961), (- 0.929411764705882), 0.568627450980392], &quot;GREEN&quot;: [(- 1), 0.96078431372549, (- 0.976470588235294)], &quot;CYAN&quot;: [(- 0.843137254901961), 0.984313725490196, 1], &quot;YELLOW&quot;: [0.984313725490196, 0.992156862745098, (- 0.835294117647059)], &quot;PURPLE&quot;: [1, (- 0.67843137254902), 1], &quot;GREY&quot;: [(- 0.23921568627451), (- 0.411764705882353), (- 0.349019607843137)], &quot;BLACK&quot;: [(- 0.67843137254902), (- 0.584313725490196), (- 0.56078431372549)]};&amp;#10;distcol = basecol;&amp;#10;good_feedback_col = &quot;#a6d854&quot;;&amp;#10;slow_feedback_col = &quot;#feb24c&quot;;&amp;#10;enc_rest_msg = &quot;&quot;;&amp;#10;wm_rest_msg = &quot;&quot;;&amp;#10;ret_rest_msg = &quot;&quot;;&amp;#10;feedback_msg = &quot;&quot;;&amp;#10;feedback_col = basecol;&amp;#10;" valType="extendedCode"/>
+        <Param name="Begin Experiment" updates="constant" val="# To select version run files&amp;#10;exp_version = str(expInfo['version'])&amp;#10;&amp;#10;# Same colours as Wilken &amp; Ma (2004).&amp;#10;CLRS = {&amp;#10;    'RED': [1, -0.733333333333333, -0.756862745098039],&amp;#10;    'BLUE': [-0.843137254901961, -0.929411764705882, 0.568627450980392],&amp;#10;    'GREEN': [-1, 0.96078431372549, -0.976470588235294],&amp;#10;    'CYAN': [-0.843137254901961, 0.984313725490196, 1],&amp;#10;    'YELLOW': [0.984313725490196, 0.992156862745098, -0.835294117647059],&amp;#10;    'PURPLE': [1, -0.67843137254902, 1],&amp;#10;    'GREY': [-0.23921568627451, -0.411764705882353, -0.349019607843137],&amp;#10;    'ORANGE': [1, -0.364705882352941, -0.756862745098039],&amp;#10;    # &quot;Black&quot; according to Wilken &amp; Ma:&amp;#10;    'BLACK': [-0.67843137254902, -0.584313725490196, -0.56078431372549],&amp;#10;    # &quot;White&quot; according to me:&amp;#10;    'WHITE': [1, 0.929411764705882, 0.952941176470588],&amp;#10;    # Actual black...&amp;#10;    'X': [-1,-1,-1],&amp;#10;}&amp;#10;&amp;#10;# AVOIDING NUMPY&amp;#10;# For the background colour, use 'X'. Needs setting manually.&amp;#10;bgcol = CLRS.get('X', [-1, -1, -1])&amp;#10;basecol = [1,1,1] # Used for font colour&amp;#10;&amp;#10;good_feedback_col = CLRS.get('GREEN', [1,1,1]) # '#a6d854'&amp;#10;slow_feedback_col = CLRS.get('ORANGE', [1,1,1]) # '#feb24c'&amp;#10;&amp;#10;wm_rest_msg = &quot;&quot;&amp;#10;&amp;#10;feedback_msg = &quot;&quot;&amp;#10;feedback_col = basecol" valType="extendedCode"/>
+        <Param name="Begin JS Experiment" updates="constant" val="exp_version = expInfo[&quot;version&quot;].toString();&amp;#10;CLRS = {&quot;RED&quot;: [1, (- 0.733333333333333), (- 0.756862745098039)], &quot;BLUE&quot;: [(- 0.843137254901961), (- 0.929411764705882), 0.568627450980392], &quot;GREEN&quot;: [(- 1), 0.96078431372549, (- 0.976470588235294)], &quot;CYAN&quot;: [(- 0.843137254901961), 0.984313725490196, 1], &quot;YELLOW&quot;: [0.984313725490196, 0.992156862745098, (- 0.835294117647059)], &quot;PURPLE&quot;: [1, (- 0.67843137254902), 1], &quot;GREY&quot;: [(- 0.23921568627451), (- 0.411764705882353), (- 0.349019607843137)], &quot;ORANGE&quot;: [1, (- 0.364705882352941), (- 0.756862745098039)], &quot;BLACK&quot;: [(- 0.67843137254902), (- 0.584313725490196), (- 0.56078431372549)], &quot;WHITE&quot;: [1, 0.929411764705882, 0.952941176470588], &quot;X&quot;: [(- 1), (- 1), (- 1)]};&amp;#10;bgcol = CLRS.get(&quot;X&quot;, [(- 1), (- 1), (- 1)]);&amp;#10;basecol = [1, 1, 1];&amp;#10;good_feedback_col = CLRS.get(&quot;GREEN&quot;, [1, 1, 1]);&amp;#10;slow_feedback_col = CLRS.get(&quot;ORANGE&quot;, [1, 1, 1]);&amp;#10;wm_rest_msg = &quot;&quot;;&amp;#10;feedback_msg = &quot;&quot;;&amp;#10;feedback_col = basecol;&amp;#10;" valType="extendedCode"/>
         <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
         <Param name="Begin Routine" updates="constant" val="" valType="extendedCode"/>
         <Param name="Code Type" updates="None" val="Auto-&gt;JS" valType="str"/>
@@ -746,8 +746,8 @@
         <Param name="Before JS Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="Begin Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
-        <Param name="Begin JS Routine" updates="constant" val="n_wm_trials = (wm_trials.trialList.length * wm_trials.nReps);&amp;#10;console.log(&quot;N wm trials: &quot;, n_wm_trials);&amp;#10;console.log(wm_trials.thisTrialN);&amp;#10;console.log(&quot;TRIAL_N = &quot;, TRIAL_N);&amp;#10;" valType="extendedCode"/>
-        <Param name="Begin Routine" updates="constant" val="n_wm_trials = len(wm_trials.trialList) * wm_trials.nReps&amp;#10;&amp;#10;print(&quot;N wm trials: &quot;, n_wm_trials)&amp;#10;&amp;#10;print(wm_trials.thisTrialN)&amp;#10;print(&quot;TRIAL_N = &quot;, TRIAL_N)" valType="extendedCode"/>
+        <Param name="Begin JS Routine" updates="constant" val="n_wm_trials = (wm_trials.trialList.length * wm_trials.nReps);&amp;#10;" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="n_wm_trials = len(wm_trials.trialList) * wm_trials.nReps" valType="extendedCode"/>
         <Param name="Code Type" updates="None" val="Auto-&gt;JS" valType="str"/>
         <Param name="Each Frame" updates="constant" val="wm_rest_msg = &quot;Completed &quot; + str(TRIAL_N+1) + &quot; of &quot; + str(n_wm_trials) + &quot; trials.\n\nPress [SPACE] to continue...&quot;&amp;#10;&amp;#10;if (TRIAL_N &gt; 0) and (TRIAL_N % (n_wm_trials / 3) == 0):&amp;#10;    print(&quot;Break time&quot;)&amp;#10;    print(wm_rest_msg)&amp;#10;    continueRoutine = True&amp;#10;else:&amp;#10;    print(&quot;Not break time&quot;)&amp;#10;&amp;#10;    continueRoutine = False&amp;#10;" valType="extendedCode"/>
         <Param name="Each JS Frame" updates="constant" val="wm_rest_msg = ((((&quot;Completed &quot; + (TRIAL_N + 1).toString()) + &quot; of &quot;) + n_wm_trials.toString()) + &quot; trials.\n\nPress [SPACE] to continue...&quot;);&amp;#10;if (((TRIAL_N &gt; 0) &amp;&amp; ((TRIAL_N % (n_wm_trials / 3)) === 0))) {&amp;#10;    console.log(&quot;Break time&quot;);&amp;#10;    console.log(wm_rest_msg);&amp;#10;    continueRoutine = true;&amp;#10;} else {&amp;#10;    console.log(&quot;Not break time&quot;);&amp;#10;    continueRoutine = false;&amp;#10;}&amp;#10;" valType="extendedCode"/>
@@ -920,7 +920,7 @@
       <CodeComponent name="wm_setup_code_1">
         <Param name="Before Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="Before JS Experiment" updates="constant" val="" valType="extendedCode"/>
-        <Param name="Begin Experiment" updates="constant" val="rad = 0.25 # radius = a quarter of the screen&amp;#10;box_size = 0.1&amp;#10;&amp;#10;study_frames = 0.2 * 60&amp;#10;retention_frames = 1 * 60&amp;#10;test_frames = 1.3 * 60&amp;#10;test_fix_frames = 2.3 * 60&amp;#10;&amp;#10;## INITIAL COLOURS (DO NOT USE BECAUSE JS SUCKS!!!:&amp;#10;#clrs = {'RED':np.array([255,36,28]),&amp;#10;#       'GREEN':np.array([0, 248, 25]),&amp;#10;#       'BLUE':np.array([0, 145, 255]),&amp;#10;#       'YELLOW':np.array([255,251, 34]),&amp;#10;#       'CYAN':np.array([0, 255, 255]),&amp;#10;#       'PURPLE':np.array([255, 60, 255]),&amp;#10;#       'WHITE':np.array([250, 250, 250])}&amp;#10;&amp;#10;## The _ is to differentiate these from builtin color vars.&amp;#10;#_RED = [1.0, -0.7176470588235294, -0.7803921568627451]&amp;#10;#_GREEN = [-1.0, 0.9450980392156862, -0.803921568627451]&amp;#10;#_BLUE = [-1.0, 0.13725490196078427, 1.0]&amp;#10;#_YELLOW = [1.0, 0.968627450980392, -0.7333333333333334]&amp;#10;#_CYAN = [-1.0, 1.0, 1.0]&amp;#10;#_PURPLE = [1.0, -0.5294117647058824, 1.0]&amp;#10;#_WHITE = [0.9607843137254901, 0.9607843137254901, 0.9607843137254901]&amp;#10;#_X = bgcol&amp;#10;#&amp;#10;#&amp;#10;#&amp;#10;## Seven colours plus a bacground blank colour (X). IF there's a change, the to-change slot's colour changes to the seventh.&amp;#10;#all_colours = {&quot;RED&quot;:_RED, &quot;GREEN&quot;:_GREEN, &quot;BLUE&quot;:_BLUE, &quot;YELLOW&quot;:_YELLOW, &quot;CYAN&quot;:_CYAN, &quot;PURPLE&quot;:_PURPLE, &quot;WHITE&quot;:_WHITE, 'X':_X}&amp;#10;&amp;#10;# Since these get set prior to reading in the file they need initializing&amp;#10;# ... they get updated on each trial so the X is just filler.&amp;#10;&amp;#10;#study_clr1 = _X&amp;#10;#study_clr2 = _X&amp;#10;#study_clr3 = _X&amp;#10;#study_clr4 = _X&amp;#10;#study_clr5 = _X&amp;#10;#study_clr6 = _X&amp;#10;#&amp;#10;#test_clr1 = _X&amp;#10;#test_clr2 = _X&amp;#10;#test_clr3 = _X&amp;#10;#test_clr4 = _X&amp;#10;#test_clr5 = _X&amp;#10;#test_clr6 = _X" valType="extendedCode"/>
+        <Param name="Begin Experiment" updates="constant" val="rad_ = 0.25 # radius = a quarter of the screen&amp;#10;box_size = 0.1&amp;#10;&amp;#10;study_frames = 0.2 * 60&amp;#10;retention_frames = 1 * 60&amp;#10;test_frames = 1.3 * 60&amp;#10;test_fix_frames = 2.3 * 60&amp;#10;&amp;#10;## INITIAL COLOURS (DO NOT USE BECAUSE JS SUCKS!!!:&amp;#10;#clrs = {'RED':np.array([255,36,28]),&amp;#10;#       'GREEN':np.array([0, 248, 25]),&amp;#10;#       'BLUE':np.array([0, 145, 255]),&amp;#10;#       'YELLOW':np.array([255,251, 34]),&amp;#10;#       'CYAN':np.array([0, 255, 255]),&amp;#10;#       'PURPLE':np.array([255, 60, 255]),&amp;#10;#       'WHITE':np.array([250, 250, 250])}&amp;#10;&amp;#10;## The _ is to differentiate these from builtin color vars.&amp;#10;#_RED = [1.0, -0.7176470588235294, -0.7803921568627451]&amp;#10;#_GREEN = [-1.0, 0.9450980392156862, -0.803921568627451]&amp;#10;#_BLUE = [-1.0, 0.13725490196078427, 1.0]&amp;#10;#_YELLOW = [1.0, 0.968627450980392, -0.7333333333333334]&amp;#10;#_CYAN = [-1.0, 1.0, 1.0]&amp;#10;#_PURPLE = [1.0, -0.5294117647058824, 1.0]&amp;#10;#_WHITE = [0.9607843137254901, 0.9607843137254901, 0.9607843137254901]&amp;#10;#_X = bgcol&amp;#10;#&amp;#10;#&amp;#10;#&amp;#10;## Seven colours plus a bacground blank colour (X). IF there's a change, the to-change slot's colour changes to the seventh.&amp;#10;#all_colours = {&quot;RED&quot;:_RED, &quot;GREEN&quot;:_GREEN, &quot;BLUE&quot;:_BLUE, &quot;YELLOW&quot;:_YELLOW, &quot;CYAN&quot;:_CYAN, &quot;PURPLE&quot;:_PURPLE, &quot;WHITE&quot;:_WHITE, 'X':_X}&amp;#10;&amp;#10;# Since these get set prior to reading in the file they need initializing&amp;#10;# ... they get updated on each trial so the X is just filler.&amp;#10;&amp;#10;#study_clr1 = _X&amp;#10;#study_clr2 = _X&amp;#10;#study_clr3 = _X&amp;#10;#study_clr4 = _X&amp;#10;#study_clr5 = _X&amp;#10;#study_clr6 = _X&amp;#10;#&amp;#10;#test_clr1 = _X&amp;#10;#test_clr2 = _X&amp;#10;#test_clr3 = _X&amp;#10;#test_clr4 = _X&amp;#10;#test_clr5 = _X&amp;#10;#test_clr6 = _X" valType="extendedCode"/>
         <Param name="Begin JS Experiment" updates="constant" val="rad = 0.25;&amp;#10;box_size = 0.1;&amp;#10;study_frames = (0.2 * 60);&amp;#10;retention_frames = (1 * 60);&amp;#10;test_frames = (1.3 * 60);&amp;#10;test_fix_frames = (2.3 * 60);&amp;#10;" valType="extendedCode"/>
         <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
         <Param name="Begin Routine" updates="constant" val="" valType="extendedCode"/>
